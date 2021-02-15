@@ -1,8 +1,10 @@
 function listar() {
-    return {
-        status: 200,
-        response: "Hola mundo desde el service!"
-    }
+    return new Promise((resolve) => {
+        resolve({
+            status: 200,
+            response: "Hola mundo desde el service con promises!"
+        })
+    });
 }
 
 module.exports = {
