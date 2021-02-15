@@ -1,8 +1,9 @@
 const {Router} = require('express');
 const router = Router();
-
+const service = require('../services/usuarios_service')
 router.get('/', (req, res) => {
-    res.status(200).json({status:200, response: "Hola mundo"})
+    resultado = service.listar()
+    res.status(resultado.status).json({status: resultado.status, response: resultado.response})
 });
 
 
